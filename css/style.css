@@ -1,0 +1,812 @@
+/* --- Estilos Gerais e Reset --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bahnschrift', 'Segoe UI', 'Roboto', sans-serif;
+    background-color: #1B2838; /* Azul bem escuro, cor da Steam */
+    color: #c7d5e0; /* Cinza claro azulado */
+    line-height: 1.6;
+}
+
+/* --- Cabeçalho e Navegação --- */
+header {
+    background-color: #121a25;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #3a7b9f; /* Azul CT como destaque */
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: #c7d5e0;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #3a7b9f; /* Azul CT */
+    color: #ffffff;
+}
+
+/* Estilo para o link da página ativa */
+nav ul li a.active {
+    background-color: #de9b35; /* Laranja/Amarelo TR */
+    color: #121a25;
+}
+
+
+/* --- Conteúdo Principal (Main) --- */
+main {
+    max-width: 1200px;
+    margin: 2.5rem auto;
+    padding: 0 2rem;
+}
+
+.welcome, .content-section {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+    border: 1px solid #2a3f5a;
+}
+
+h2 {
+    color: #de9b35; /* Laranja/Amarelo TR para títulos */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #3a7b9f;
+    padding-bottom: 0.5rem;
+}
+
+/* --- Cards de Conteúdo --- */
+.card {
+    background-color: #121a25;
+    border: 1px solid #2a3f5a;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    color: #3a7b9f; /* Azul CT para títulos de cards */
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+/* --- Grid para Armas e Mapas --- */
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* --- Placeholder de Imagem --- */
+.image-placeholder {
+    width: 100%;
+    background-color: #2a3f5a;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.card:hover .image-placeholder img {
+    transform: scale(1.05);
+}
+
+
+/* --- Rodapé --- */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2.5rem;
+    background-color: #121a25;
+    border-top: 1px solid #2a3f5a;
+    font-size: 0.9rem;
+}
+
+/* --- Estilos para o "Monte seu Kit" (Aplicável APENAS a armas.html) --- */
+
+/* Botão de Iniciar */
+.kit-builder-start {
+    text-align: center;
+    margin: 3rem 0;
+}
+#kit-start-button { /* Corrected ID */
+    background-color: #de9b35;
+    color: #121a25;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+#kit-start-button:hover {
+    background-color: #ffb84d;
+    transform: scale(1.05);
+}
+
+/* Barra de Seleção Fixa */
+#kit-builder-ui { /* Corrected ID */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #121a25;
+    border-top: 3px solid #de9b35;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    z-index: 1000;
+    flex-wrap: wrap; /* Added for responsiveness */
+}
+#kit-instructions {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+#kit-slots {
+    display: flex;
+    gap: 10px;
+}
+.kit-slot {
+    background-color: #1B2838;
+    border: 1px dashed #3a7b9f;
+    border-radius: 5px;
+    padding: 5px;
+    width: 120px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #c7d5e0;
+    font-size: 0.9rem;
+}
+.kit-slot img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+#kit-navigation button {
+    background-color: #3a7b9f;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#kit-navigation button:hover {
+    background-color: #4e9cc8;
+}
+#kit-navigation button:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Modal de Resultado */
+#kit-result-modal {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.kit-modal-content {
+    background-color: #1B2838;
+    padding: 30px;
+    border: 2px solid #de9b35;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+}
+.kit-close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#kit-final-display {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+.kit-final-item {
+    background-color: #121a25;
+    padding: 15px;
+    border-radius: 5px;
+    flex-basis: 200px;
+}
+.kit-final-item img {
+    max-width: 180px;
+    height: 100px;
+    object-fit: contain;
+}
+.kit-final-item h3 {
+    color: #de9b35;
+    margin-top: 10px;
+    font-size: 1rem;
+}
+#kit-reset-button {
+    margin-top: 15px;
+    background-color: #de9b35;
+    color: #121a25;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Classes de Controle do JavaScript para o Kit Builder */
+/* These classes are primarily for the kit builder functionality */
+body.kit-mode-active .card {
+    transition: transform 0.2s, opacity 0.3s;
+}
+.kit-category-disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+.kit-card-selectable {
+    cursor: pointer;
+}
+.kit-card-selectable:hover {
+    transform: scale(1.05);
+    border: 2px solid #de9b35;
+}
+.kit-card-selected {
+    transform: scale(1.05);
+    border: 3px solid #3a7b9f !important;
+    box-shadow: 0 0 20px #3a7b9f;
+}
+
+
+/* --- Formulario Styles --- */
+#player-form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Espaço entre os grupos de formulário */
+}
+
+.form-group {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #2a3f5a;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #c7d5e0;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #3a7b9f;
+    border-radius: 4px;
+    background-color: #121a25;
+    color: #c7d5e0;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #de9b35;
+    box-shadow: 0 0 8px rgba(222, 155, 53, 0.5);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite redimensionar verticalmente */
+    min-height: 100px;
+}
+
+.form-group input[type="radio"] {
+    margin-right: 0.5rem;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* --- General Button Styles --- */
+/* Consolidated common button styles. action-button and button-submit can use this. */
+.button-submit, .button-clear, .action-button, .button-primary {
+    background-color: #de9b35; /* Laranja/Amarelo TR default */
+    color: #121a25;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    text-decoration: none; /* For links styled as buttons */
+    display: inline-block; /* For links styled as buttons */
+}
+
+.button-submit:hover, .action-button:hover, .button-primary:hover {
+    background-color: #ffb84d;
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.button-clear {
+    background-color: #3a7b9f; /* Azul CT */
+    color: #ffffff;
+}
+
+.button-clear:hover {
+    background-color: #4e9cc8;
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Playstyle Quiz Styles --- */
+#playstyle-quiz {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid #2a3f5a;
+}
+
+.quiz-question {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #2a3f5a;
+}
+
+.quiz-question:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.quiz-question h3 {
+    color: #3a7b9f;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.quiz-question label {
+    display: block;
+    margin-bottom: 0.7rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.quiz-question label:hover {
+    color: #de9b35;
+}
+
+.quiz-question input[type="radio"] {
+    margin-right: 0.8rem;
+    /* Estilo básico para o radio button */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #3a7b9f;
+    border-radius: 50%;
+    vertical-align: middle;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.quiz-question input[type="radio"]:checked {
+    background-color: #de9b35;
+    border-color: #de9b35;
+}
+
+#quiz-result {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #121a25;
+    border: 2px solid #de9b35;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#quiz-result h3 {
+    color: #de9b35;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+#playstyle-text {
+    font-size: 1.1rem;
+    color: #c7d5e0;
+}
+
+/* NEW: Quiz Completion Screen Styles */
+#quiz-completion-screen {
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background-color: #121a25; /* Darker background */
+    border: 2px solid #3a7b9f; /* CT blue border */
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(58, 123, 159, 0.4); /* Glow effect */
+}
+
+#quiz-completion-screen h3 {
+    color: #ffffff; /* White title for impact */
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+#quiz-completion-screen p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    color: #c7d5e0;
+}
+
+#go-to-arsenal-button { /* Specific style for the button in the completion screen */
+    background-color: #de9b35; /* TR orange */
+    color: #121a25;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+}
+
+#go-to-arsenal-button:hover {
+    background-color: #ffb84d;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Kit Link Section Styles (Old - no longer directly used in formulario.html) ---
+.kit-link-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: 2px solid #de9b35;
+}
+
+.kit-link-section h2 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.kit-link-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #c7d5e0;
+}
+
+.button-primary {
+    display: inline-block;
+    background-color: #3a7b9f;
+    color: #ffffff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-primary:hover {
+    background-color: #4e9cc8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+*/
+
+/* --- Global Hidden Class --- */
+.hidden {
+    display: none !important;
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 900px) {
+    #kit-builder-ui {
+        flex-direction: column;
+        padding: 10px;
+        height: auto;
+    }
+
+    #kit-instructions {
+        margin-bottom: 10px;
+    }
+
+    #kit-slots {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 10px;
+        gap: 5px;
+    }
+
+    .kit-slot {
+        width: 100px; /* Adjust size for smaller screens */
+        height: 60px;
+    }
+
+    #kit-navigation button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 5px 10px;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+
+    .content-section {
+        padding: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .item-grid {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .kit-final-item {
+        flex-basis: 150px; /* Smaller items in modal */
+    }
+    .kit-final-item img {
+        max-width: 120px;
+        height: 80px;
+    }
+
+    .kit-modal-content {
+        padding: 20px;
+    }
+
+    #quiz-completion-screen h3 {
+        font-size: 1.5rem;
+    }
+
+    #go-to-arsenal-button {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+
+/* --- Estilos para a Página de Créditos (creditos.html) --- */
+.credits-section {
+    text-align: center;
+}
+
+.creators-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    justify-content: center; /* Centraliza os cards quando há poucos */
+}
+
+.creator-card {
+    background-color: #121a25; /* Fundo escuro */
+    border: 1px solid #2a3f5a; /* Borda sutil */
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.creator-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Sombra mais pronunciada */
+}
+
+.creator-photo-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Foto redonda */
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 3px solid #de9b35; /* Borda laranja para a foto */
+    box-shadow: 0 0 10px rgba(222, 155, 53, 0.5); /* Brilho na foto */
+}
+
+.creator-photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.creator-card h3 {
+    color: #3a7b9f; /* Azul CT para o nome */
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.creator-card p {
+    font-size: 0.95rem;
+    color: #c7d5e0;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.special-thanks {
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #de9b35; /* Laranja/Amarelo TR */
+}
+
+/* Ajustes responsivos para a seção de Créditos */
+@media (max-width: 768px) {
+    .creators-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+}
+
+
+/*Testes*/
+
+a.card-link {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Faz o texto dentro do card herdar a cor padrão */
+}
+
+a.card-link .card h3, a.card-link .card p {
+    color: #c7d5e0; /* Garante que o texto permaneça na cor correta */
+}
+
+a.card-link .card h3 {
+    color: #3a7b9f; /* Mantém a cor original do título do card */
+}
+
+
+/* --- Estilos do Carrossel (para versoes.html) --- */
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 2rem auto;
+    overflow: hidden; /* Essencial para o carrossel funcionar */
+    border-radius: 8px; /* Mantém as bordas arredondadas do card */
+}
+
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* A mágica da animação */
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box; /* Garante que o padding não quebre o layout */
+    margin-bottom: 0; /* Remove a margem padrão do card */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(27, 40, 56, 0.7); /* Fundo semi-transparente */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+    background-color: #de9b35; /* Laranja TR no hover */
+    color: #121a25;
+}
+
+.carousel-button.prev {
+    left: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+.carousel-button.next {
+    right: 10px;
+    border-radius: 0 5px 5px 0;
+}
