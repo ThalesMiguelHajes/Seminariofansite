@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS:GO Fan Site - Arsenal</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CS:GO</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="versoes.html">Histórico</a></li>
+                <li><a href="armas.html">Arsenal</a></li>
+                <li><a href="mapas.html">Mapas</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+                <li><a href="creditos.html">Créditos</a></li> </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <h2>Arsenal Completo</h2>
+            <p>Dominar cada peça do arsenal é a chave para a vitória. Conheça o equipamento e as armas disponíveis no jogo.</p>
+
+            <section class="content-section kit-builder-container">
+                <h2>Monte seu Kit de Entrada!</h2>
+                <p>Selecione seu equipamento, pistola e arma primária para a batalha!</p>
+                <div id="kit-start-area" class="kit-builder-start">
+                    <button id="kit-start-button" class="action-button">Começar a Montar Kit</button>
+                </div>
+
+                <div id="kit-builder-ui" class="hidden">
+                    <div id="kit-slots">
+                        <div class="kit-slot" data-slot="equip1">Equip. 1</div>
+                        <div class="kit-slot" data-slot="equip2">Equip. 2</div>
+                        <div class="kit-slot" data-slot="pistol">Pistola</div>
+                        <div class="kit-slot" data-slot="primary">Arma Primária</div>
+                    </div>
+                    <div id="kit-instructions"></div>
+                    <div id="kit-navigation">
+                        <button id="kit-next-button">Próximo</button>
+                    </div>
+                </div>
+            </section>
+
+            <div id="kit-result-modal" class="hidden">
+                <div class="kit-modal-content">
+                    <span class="kit-close-button" id="kit-close-modal">&times;</span>
+                    <h2>Seu Kit Escolhido!</h2>
+                    <div id="kit-final-display">
+                        </div>
+                    <button id="kit-reset-button" class="action-button">Montar Novo Kit</button>
+                </div>
+            </div>
+
+            <h3 class="category-title">Equipamento</h3>
+            <div class="item-grid">
+                <div class="card">
+                    <div class="image-placeholder"><img src="../img/Capacete.png" alt="Colete e Capacete"></div>
+                    <h3>Colete e Capacete</h3>
+                    <p>Proteção vital que absorve dano e, o mais importante, previne um 'one-tap' de rifles como a AK-47. Uma compra obrigatória.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"><img src="../img/Kit defusar (2).png" alt="Kit de Desarme"></div>
+                    <h3>Kit de Desarme</h3>
+                    <p>Exclusivo para CTs, este kit corta o tempo de desarme da C4 pela metade. Essencial para reprises de bombsite e vitórias no último segundo.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"><img src="../img/Bomba de Fumaca.png" alt="Granada de Fumaça"></div>
+                    <h3>Granada de Fumaça</h3>
+                    <p>A ferramenta tática mais importante. Use para bloquear a visão inimiga, criar passagens seguras e executar estratégias complexas.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"><img src="../img/Flashbang.png" alt="Granada de Luz"></div>
+                    <h3>Granada de Luz</h3>
+                    <p>Cega qualquer um que olhe para a explosão. Perfeita para iniciar uma entrada, forçar inimigos a saírem de suas posições ou ganhar um duelo.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"><img src="../img/Incendiaria.png" alt="Granada incendiaria/Molotov"></div>
+                    <h3>Granada incendiaria/Molotov</h3>
+                    <p>Cria uma poça de fogo que nega área e causa dano contínuo. Ideal para limpar cantos, atrasar avanços e forçar oponentes a se moverem.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"><img src="../img/DEcoy.png" alt="Granada Decoy"></div>
+                    <h3>Granada Decoy</h3>
+                    <p>Imita o som da sua arma mais poderosa para confundir os inimigos no minimapa. Uma ferramenta barata para criar distrações ou falsas informações.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"><img src="../img/ZEUS.png" alt="Zeus"></div>
+                    <h3>Zeus x27</h3>
+                    <p>Um taser de curto alcance que garante uma baixa instantânea se acertar. Uma compra de alto risco e humilhação máxima para o adversário.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"><img src="../img/Granada.png" alt="Granada"></div>
+                    <h3>Granada Explosiva</h3>
+                    <p>Causa dano explosivo em área. Perfeita para finalizar inimigos com pouca vida, danificar grupos ou forçar um recuo.</p>
+                </div>
+            </div>
+
+            <h3 class="category-title">Pistolas</h3>
+            <div class="item-grid">
+                <div class="card"><div class="image-placeholder"><img src="../img/Glock.png" alt="Glock-18"></div><h3>Glock-18</h3><p>Pistola inicial dos Terroristas. Fraca contra colete, mas seu modo de rajada de 3 tiros pode ser surpreendente em curtas distâncias.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/USPS.png" alt="USP-S"></div><h3>USP-S</h3><p>A escolha inicial dos CTs. Extremamente precisa e silenciosa com o silenciador, recompensa 'one-taps' em rodadas de pistola.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/p250.png" alt="P250"></div><h3>P250</h3><p>Uma pistola barata e eficaz contra inimigos com e sem colete. Um upgrade popular para quem busca mais poder de fogo na primeira rodada.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/Eagle.png" alt="Desert Eagle"></div><h3>Desert Eagle</h3><p>A 'Deagle' é uma lenda. Um canhão de mão que pode matar com um único tiro na cabeça a qualquer distância. Requer precisão e paciência.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/Five Seven.png" alt="Five-SeveN"></div><h3>Five-SeveN</h3><p>Exclusiva dos CTs, esta pistola tem um grande pente e alta penetração de armadura, tornando-a uma 'pocket M4' em rodadas forçadas.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/TEC-9.png" alt="Tec-9"></div><h3>Tec-9</h3><p>A contraparte TR da Five-SeveN. Famosa por sua alta cadência de tiro, é ideal para avanços agressivos e tiroteios em movimento.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/Beretta.png" alt="Dual Berettas"></div><h3>Dual Berettas</h3><p>Dobro de balas, dobro de diversão. Ineficaz à distância, mas pode sobrecarregar inimigos em espaços confinados com sua chuva de projéteis.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/CZ75.png" alt="CZ75-Auto"></div><h3>CZ75-Auto</h3><p>Uma pistola totalmente automática que devasta a curta distância, mas seu pente pequeno e recuo alto a tornam desafiadora.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/P2000.png" alt="P2000"></div><h3>P2000</h3><p>Alternativa à USP-S para os CTs. Sem silenciador, mas com mais munição no pente, favorecendo um estilo de jogo mais agressivo.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/R8.png" alt="R8 Revolver"></div><h3>R8 Revolver</h3><p>Um revólver de alta precisão e dano. Seu tiro primário é lento, mas mortalmente preciso. O secundário dispara rapidamente sem precisão.</p></div>
+            </div>
+
+            <h3 class="category-title">Rifles</h3>
+            <div class="item-grid">
+                <div class="card"><div class="image-placeholder"><img src="../img/Ak.png" alt="AK-47"></div><h3>AK-47</h3><p>O rifle de assalto dos Terroristas. Famoso pelo 'one-shot headshot', é poderoso e preciso com disparos controlados.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/M4A4.png" alt="M4A4"></div><h3>M4A4</h3><p>O pilar dos CTs. Possui uma alta cadência de tiro e um recuo mais controlável, sendo uma escolha versátil para qualquer situação.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/M4A1-S.png" alt="M4A1-S"></div><h3>M4A1-S</h3><p>Alternativa à M4A4, com silenciador, menos recuo e maior precisão, mas com um pente menor e cadência de tiro mais baixa.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/Awp.png" alt="AWP"></div><h3>AWP</h3><p>O rifle de precisão icônico. Um tiro, uma baixa na maior parte do corpo. Alto risco, alta recompensa e define o rumo de muitas partidas.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/SSG.png" alt="SSG 08"></div><h3>SSG 08</h3><p>Conhecida como "Scout", é um rifle de precisão leve e barato. Requer um tiro na cabeça para uma baixa, mas permite grande mobilidade.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/SG553.png" alt="SG 553"></div><h3>SG 553</h3><p>Rifle com mira dos Terroristas. Sua mira e alta penetração de armadura a tornam extremamente letal, embora com um recuo complexo.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/AUG.png" alt="AUG"></div><h3>AUG</h3><p>A contraparte CT da SG 553. Um rifle com mira que se destaca em segurar ângulos e confrontos de longa distância com precisão.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/FAMAS.png" alt="FAMAS"></div><h3>FAMAS</h3><p>Rifle mais barato dos CTs, ideal para rodadas econômicas. Oferece um modo de rajada de 3 tiros para maior precisão.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/Galil AR.png" alt="Galil AR"></div><h3>Galil AR</h3><p>A opção econômica de rifle para os Terroristas. Eficaz em rodadas forçadas e contra oponentes com menos equipamento.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/SCAR 20.png" alt="SCAR-20"></div><h3>SCAR-20</h3><p>Rifle de precisão semiautomático dos CTs. Apelidada de "autonoob", é odiada por muitos, mas devastadora para segurar posições.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/G3SG.png" alt="G3SG1"></div><h3>G3SG1</h3><p>A versão Terrorista da SCAR-20. Eficiente para punir CTs descuidados em longas distâncias com sua alta cadência de tiro.</p></div>
+            </div>
+
+             <h3 class="category-title">Submetralhadoras</h3>
+            <div class="item-grid">
+                <div class="card"><div class="image-placeholder"><img src="../img/MP9.png" alt="MP9"></div><h3>MP9</h3><p>Exclusiva dos CTs, esta SMG tem uma cadência de tiro altíssima, perfeita para emboscadas e combate de curtíssima distância.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/MAC 10.png" alt="MAC-10"></div><h3>MAC-10</h3><p>A SMG barata dos Terroristas. Ideal para avanços rápidos e tiroteios em movimento, recompensando um estilo de jogo agressivo.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/MP7.png" alt="MP7"></div><h3>MP7</h3><p>Um híbrido entre SMG e rifle. Oferece boa precisão e dano a médias distâncias, mas com um custo mais elevado na sua categoria.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/UMP-45.png" alt="UMP-45"></div><h3>UMP-45</h3><p>Valorizada por seu baixo custo e bom dano contra coletes, é uma escolha forte para rodadas anti-eco e de média força.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/P90.png" alt="P90"></div><h3>P90</h3><p>Famosa pelo "Rush B, no stop!". Com um pente de 50 balas e alta cadência, é a arma definitiva para atirar enquanto corre.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/PP BIZON.png" alt="PP-Bizon"></div><h3>PP-Bizon</h3><p>Possui um pente enorme, mas é muito fraca contra inimigos com colete. Eficaz apenas em rodadas anti-eco para surpreender oponentes.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/MP5-SD.png" alt="MP5-SD"></div><h3>MP5-SD</h3><p>Uma SMG com silenciador que oferece grande mobilidade e um recuo baixo, ideal para flanquear e atacar de posições inesperadas.</p></div>
+            </div>
+
+            <h3 class="category-title">Escopetas</h3>
+            <div class="item-grid">
+                <div class="card"><div class="image-placeholder"><img src="../img/NOVA.png" alt="Nova"></div><h3>Nova</h3><p>A escopeta mais barata. Requer boa mira para acertar um tiro letal, mas é gratificante quando o faz. Alta recompensa por baixa.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/XM 1014.png" alt="XM1014"></div><h3>XM1014</h3><p>Uma escopeta automática que permite disparar rapidamente. Perfeita para segurar posições apertadas e contra múltiplos inimigos.</p></div>
+                <div class="card"><div class="image-placeholder"><img src="../img/MAG 7.png" alt="MAG-7"></div><h3>MAG-7</h3><p>Exclusiva dos CTs, esta escopeta é devastadora a curta distância. Seu carregador rápido a torna ideal para defesa agressiva.</p></div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - CS:GO Fan Site | Criado por um fã para fãs.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS:GO Fan Site - Formulário</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CS:GO</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="versoes.html">Histórico</a></li>
+                <li><a href="armas.html">Arsenal</a></li>
+                <li><a href="mapas.html">Mapas</a></li>
+                <li><a href="formulario.html">Formulário</a></li>
+                <li><a href="creditos.html">Créditos</a></li> </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content-section">
+            <h2>Aliste-se no time, player!</h2>
+            <p>Conte como você conheceu o jogo e o que você mais gosta de CS!</p>
+
+            <form id="player-form">
+                <div class="form-group">
+                    <label for="nickname">Nick in-game (Vale aquele nick cringe, a gente não julga... muito):</label>
+                    <input type="text" id="nickname" name="nickname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="mapafavorito">Mapa Favorito:</label>
+                    <select id="mapafavorito" name="mapafavorito">
+                        <option value="NaolembroMapa">Qualquer uma, tô só pela bagunça</option>
+                        <option value="DUST2">Dust2 (clássico é clássico)</option>
+                        <option value="MIRAGE">Mirage (quem não?)</option>
+                        <option value="INFERNO">Inferno</option>
+                        <option value="ANUBIS">Anubis</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="armafavorita">Arma Favorita:</label>
+                    <input type="text" id="armafavorita" name="armafavorita">
+                </div>
+
+                <div class="form-group">
+                    <label for="timepreferido">Você prefere CT ou TR?:</label>
+                    <select id="timepreferido" name="timepreferido">
+                        <option value="NaoLembroTime">Não Lembro</option>
+                        <option value="CT">CT</option>
+                        <option value="TR">TR</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rankmaisalto">Patente atual:</label>
+                    <select id="rankmaisalto" name="rankmaisalto">
+                        <option value="NaoLembro" selected>Não Lembro</option>
+                        <option value="Prata1">Prata (não ri, todo mundo começou aqui)</option>
+                        <option value="Ouro1">Ouro</option>
+                        <option value="Xerife">AK/Xerife</option>
+                        <option value="Aguia1">Águia</option>
+                        <option value="Supremo">Supremo</option>
+                        <option value="Global">Global (só acredito vendo)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="contato">Discord / Contato (opcional):</label>
+                    <input type="text" id="contato" name="contato">
+                </div>
+
+                <div class="form-group">
+                    <p>Quer receber memes, novidades e torneios direto no seu e-mail?</p>
+                    <input type="radio" id="news-yes" value="aceito" name="escolha">
+                    <label for="news-yes">Sim, me manda tudo!</label><br>
+                    <input type="radio" id="news-no" value="nego" name="escolha">
+                    <label for="news-no">Não, sou do time silencioso</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="ultimaspalavras">Últimas palavras (depois daquele clutch perdido):</label>
+                    <input type="text" id="ultimaspalavras" name="ultimaspalavras">
+                </div>
+
+                <div class="form-group">
+                    <label for="historia">Como que você conheceu o CS? Conte sua historia!</label>
+                    <textarea id="historia" name="historia" rows="7"></textarea>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="button-submit">[Enviar formulário]</button>
+                    <button type="reset" class="button-clear" id="clear-form-button">Limpar Formulário</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="content-section">
+            <h2>Qual seu Estilo de Jogo?</h2>
+            <p>Descubra qual perfil de jogador você se encaixa no CS:GO!</p>
+            <div id="playstyle-quiz">
+                <div class="quiz-question">
+                    <h3>1. Qual sua prioridade ao entrar em um round?</h3>
+                    <label><input type="radio" name="q1" value="agressao"> Buscar o primeiro abate e abrir o bombsite.</label><br>
+                    <label><input type="radio" name="q1" value="utilidade"> Usar minhas granadas para ajudar o time.</label><br>
+                    <label><input type="radio" name="q1" value="informacao"> Coletar informações e passar para o time.</label><br>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>2. Sua arma favorita geralmente tem:</h3>
+                    <label><input type="radio" name="q2" value="rifle"> Alto dano e precisão a média/longa distância (ex: AK-47, M4A4).</label><br>
+                    <label><input type="radio" name="q2" value="smg"> Alta cadência de tiro e mobilidade (ex: MP9, MAC-10).</label><br>
+                    <label><input type="radio" name="q2" value="sniper"> Um tiro que garante o abate (ex: AWP, Scout).</label><br>
+                </div>
+
+                <div class="quiz-question">
+                    <h3>3. Em uma situação de 1v1, você:</h3>
+                    <label><input type="radio" name="q3" value="confronto"> Busca o confronto direto e rápido.</label><br>
+                    <label><input type="radio" name="q3" value="posicionamento"> Tenta flanquear ou encontrar um bom posicionamento.</label><br>
+                    <label><input type="radio" name="q3" value="calma"> Joga com calma, esperando o erro do inimigo.</label><br>
+                </div>
+
+                <div id="quiz-result" class="hidden">
+                    <h3>Seu Estilo de Jogo é:</h3>
+                    <p id="playstyle-text"></p>
+                </div>
+            </div>
+
+            <div id="quiz-completion-screen" class="hidden">
+                <h3>Parabéns, Patente Revelada!</h3>
+                <p>Esperamos que tenha gostado do nosso quiz! Que tal agora montar o kit perfeito para o seu estilo de jogo?</p>
+                <button id="go-to-arsenal-button" class="button-primary">Montar meu Kit de Combate!</button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CS:GO Fan Site. Todos os direitos reservados. Projeto Acadêmico.</p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
